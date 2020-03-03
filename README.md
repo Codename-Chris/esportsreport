@@ -22,15 +22,17 @@ In this app users will be able to:
 https://www.canva.com/design/DAD1XAui1HA/view?utm_content=DAD1XAui1HA&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink
 (better wireframes in progress)
 
-
+# FileStructure
+* https://docs.google.com/presentation/d/1Kv-MyY9PNlfk21EmpqVL76hQMaLDYBRs5aB4NdRcKgg/edit#slide=id.p
 
 # Timeline
-Day 1: Setup basic skeleton and look into canvas
-Day 2: Work on basic game setup (ship models,weapons,background,etc)
-Day 3: Work on firing weapons and collision detection  (implement weapons for both user and enemies)
-Day 4: Setup enemies movement and continue finishing up any additional logic to be added
-Day 5: Add finishing touches and finalize.
+* Day 1: Setup basic skeleton and look into canvas
+* Day 2: Work on basic game setup (ship models,weapons,background,etc)
+* Day 3: Work on firing weapons and collision detection  (implement weapons for both user and enemies)
+* Day 4: Setup enemies movement and continue finishing up any additional logic to be added
+* Day 5: Add finishing touches and finalize.
 
 # Bonus
-Possible final boss phase?
-Customizable features such as ships/backgrounds?
+* Possible final boss phase?
+* Customizable features such as ships/backgrounds?
+
