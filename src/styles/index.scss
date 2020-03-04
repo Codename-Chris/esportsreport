@@ -4,9 +4,10 @@
   box-shadow: 3px 3px 5px 5px $color, 1px 0px 1px $color;
 }
 
-$main-color: green;
+$main-color: black;
 $accent-color: darken($main-color, 10%);
 $background-color: lighten($main-color, 40%);
+
 
 // LAYOUT
 
@@ -17,6 +18,8 @@ body {
   width: 100vw;
   display: flex;
   flex-direction: column;
+  background-image: url("../images/stars2.jpg");
+  
 }
 
 .center {
@@ -36,7 +39,7 @@ body {
 }
 
 .image-card {
-  background-image: url("../images/yoda-stitch.jpg");
+  background-image: url("../images/stars3.jpg");
   background-position: center;
 }
 

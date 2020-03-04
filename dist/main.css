@@ -1,0 +1,4 @@
+body{background-color:#666;color:#000;height:97vh;width:100vw;display:flex;flex-direction:column;background-image:url(images/stars3.jpg)}.center{display:flex;align-items:center;justify-content:center}.card{background:white;height:50vh;width:50vw;border-radius:15px;margin-top:15px;box-shadow:3px 3px 5px 5px #000,1px 0px 1px #000}.image-card{background-image:url(images/stars3.jpg);background-position:center}h2{font-size:3rem}
+
+
+/*# sourceMappingURL=main.css.map*/
