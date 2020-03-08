@@ -1,6 +1,9 @@
 # Simon Says
 is a color pattern mirroring game, where user will attempt to replicate the games color sequence.
 
+# Live Demo
+https://codename-chris.github.io/simon_says/
+
 # Technologies 
 * Vanilla Javascript
 * Css
