@@ -1,38 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="./dist/main.css" />
-    <title>Document</title>
-    <style>
-      * {
-        padding: 0;
-        margin: 0;
-      }
-    
-      canvas {
-        background: #eee;
-        display: block;
-        margin: 0 auto;
-      }
-    </style>
-  </head>
 
-  <body>
+<head>
+  <title>Simon Says</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="./dist/main.css" />
+</head>
+
+<body>
+  <script src="./dist/main.js"></script>
+  <div class="whole-page">
+    <div class="comment-container">
+      <h1 id="comments" class="title">Simon Says</h1>
+    </div>
+    <p class="instructions">Instructions: Repeat the same color pattern. There are 10 levels to beat!</p>
+    <div class="container">
+      <div class="inner-circle">
+        <button id="start" class="start-button">START</button>
+        <label id="level-counter" class="level-counter"></label>
+      </div>
+
+      <div class="board-container">
+        <div class="top-colors">
+          <div id="green" class="green color"></div>
+          <div id="red" class="red color"></div>
+        </div>
+
+        <div class="bottom-colors">
+          <div id="yellow" class="yellow color"></div>
+          <div id="blue" class="blue color"></div>
+        </div>
+      </div>
+    </div>
     
-    <div class="title"> Milky Way Warrior</div>
-    
-    <div class="high-scores"> High Score: </div>
-    
-    <div class="instructions">Instructions</div>
-    
-    <canvas id="canvas-game" width="480" height="550"></canvas>
-    <!-- <canvas id="canvas-1" width="480" height="550"></canvas> -->
-    <!-- <canvas id="canvas-2" width="480" height="550"></canvas> -->
-    
-    
-    <script src="./dist/main.js"></script>
-  </body>
+    <div class="personal-links">
+      <div>
+        <a class="link" href="https://www.linkedin.com/in/christopher-garthright/">
+          <img class="linkedin-link" src="https://image.flaticon.com/icons/svg/1384/1384088.svg" width="40px" />
+        </a>
+      </div>
+      
+      <div>
+        <a class="link" href="https://github.com/Codename-Chris">
+          <img class="git-link" src="https://image.flaticon.com/icons/svg/1051/1051377.svg" width="40px" />
+        </a>
+      </div>
+    </div>
+    <small class="footer">Made By: Christopher Garthright</small>
+  </div>
+</body>
+<script src="./js/game.js"></script>
 </html>
