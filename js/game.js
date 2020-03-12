@@ -204,10 +204,10 @@ const clearPlayerInput = () => {
 
 const resetGame = () => {
     Simon = {
-        sequence: [],
-        playerInput: [],
         gameOn: true,
         gameOver: false,
+        sequence: [],
+        playerInput: [],
         defaultLevel: "Easy",
         level: 1
     };

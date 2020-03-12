@@ -95,12 +95,13 @@ input, h1, p, div {
   position: absolute;
   text-align: center;
   background-color: #212121;
-  height: 20%;
-  width: 55%;
+  height: 30%;
+  width: 65%;
   font-size: 15px;
   color: whitesmoke;
   border: 2px solid whitesmoke;
   border-radius: 4px;
+  margin-top: 20px;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -120,9 +121,10 @@ input, h1, p, div {
   justify-content: center;
   height: 50%;
   width: 100%;
-  font-size: 13px;
+  font-size: 20px;
   text-align: center;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  color: whitesmoke;
 }
 
 .top-colors{
