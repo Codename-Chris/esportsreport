@@ -2,28 +2,30 @@
 const COLORS = ["green", "red", "yellow", "blue"]
 
 // create comments that user will see after each round
-const randomComments = ["Well Done!", "You are pretty good at this, huh?", "Not bad", "Wow", "That was easy, see if you can handle this next one >:D", "OK", "That was pure luck, see if you can follow this one!",
+const randomComments = ["Well Done!", "You are pretty good at this, huh?", "Not bad", "Wow", "That was easy, how about this", "OK", "That was just luck",
     "Very Impressive", "Not too shabby my friend", "That was lightwork, try this"]
 
-
-//will add audio here
-
-
-// setup game skeleton
-let Simon = {
-    sequence: [],
-    playerInput: [],
-    gameOn: false,
-    gameOver: false,
-    defaultLevel: "Easy",
-    level: 1
-}
-
-// fetch based on class name
+// fetch color based on id 
 const green = document.getElementById("green");
 const red = document.getElementById("red");
 const yellow = document.getElementById("yellow");
 const blue = document.getElementById("blue");
+
+// fetch audio based on id
+const colorSound = document.getElementById("color-sound");
+const startSound = document.getElementById("start-sound");
+const youWin = document.getElementById("win-sound");
+const gameOver = document.getElementById("game-over-sound");
+
+// setup game skeleton
+let Simon = {
+    gameOn: false,
+    gameOver: false,
+    sequence: [],
+    playerInput: [],
+    defaultLevel: "Easy",
+    level: 1
+}
 
 // clears gameboard
 const clearFlash = () => {
@@ -39,24 +41,28 @@ const clearFlash = () => {
 
 //make colors flash
 const flashRed = () => {
+    colorSound.play();
     red.style.backgroundColor = "rgb(222, 0, 70)";
     red.style.border = "5px solid whitesmoke"
     setTimeout(clearFlash, 500);
 }
 
 const flashYellow = () => {
+    colorSound.play();
     yellow.style.backgroundColor = "rgb(255, 230, 0)";
     yellow.style.border = "5px solid whitesmoke";
     setTimeout(clearFlash, 500);
 };
 
 const flashBlue = () => {
+    colorSound.play();
     blue.style.backgroundColor = " blue ";
     blue.style.border = "5px solid whitesmoke";
     setTimeout(clearFlash, 500);
 };
 
 const flashGreen = () => {
+    colorSound.play();
     green.style.backgroundColor = "rgb(0, 177, 103)";
     green.style.border = "5px solid whitesmoke";
     setTimeout(clearFlash, 500);
@@ -117,14 +123,16 @@ startButton.addEventListener('click', function (e) {
         sequenceGenerator();
         clearFlash();
         ComputerTurn();
-        displayLevel()
+        displayLevel();
         startButton.innerHTML = "END GAME"
     } else if (startButton.innerHTML === "END GAME") {
-        clearFlash()
+        clearFlash();
         Simon.gameOver = true;
+        gameOver.play();
         comments.innerHTML = "Don't Give Up That Easy!"
         startButton.innerHTML = "START"
     } else {
+        startSound.play();
         resetGame();
         sequenceGenerator();
         clearFlash();
@@ -176,7 +184,7 @@ comments = document.getElementById("comments")
         loseFlash();
     }
 
-    if (Simon.playerInput.length === 3) {
+    if (Simon.playerInput.length === 10) {
         winFlash();
         Simon.gameOver = true;
         startButton.innerHTML = "Start";
@@ -207,6 +215,7 @@ const resetGame = () => {
 }
 
 const loseFlash = () => {
+    gameOver.play()
     flashRed();
     flashYellow();
     flashBlue();
@@ -216,6 +225,7 @@ const loseFlash = () => {
 
 const winFlash = () => {
     while (Simon.gameOver) {
+        youWin.play();
         flashRed();
         flashYellow();
         flashBlue();
