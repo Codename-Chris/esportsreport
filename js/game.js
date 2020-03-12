@@ -112,7 +112,7 @@ const sequenceGenerator = () => {
 // displays current level
 level = document.getElementById("level-counter");
 const displayLevel = () => {
-    level.innerHTML = `ROUND ${Simon.level}`
+    level.innerHTML = `Level ${Simon.level}`
 }
 
 // button starts, ends and says trying again when you lose 
