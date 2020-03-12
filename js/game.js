@@ -27,7 +27,7 @@ let Simon = {
     level: 1
 }
 
-// clears gameboard
+// clears gameboard 
 const clearFlash = () => {
     red.style.backgroundColor = "#E01E5A";
     red.style.border = "5px solid black";
