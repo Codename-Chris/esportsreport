@@ -202,7 +202,7 @@ const clearPlayerInput = () => {
     Simon.playerInput = []
 }
 
-const resetGame = () => {
+const resetGame = () => { 
     Simon = {
         gameOn: true,
         gameOver: false,
