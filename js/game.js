@@ -160,7 +160,7 @@ const ComputerTurn = () => {
             case "blue":
                 setTimeout(flashBlue, i * 1250);
                 break;
-            default:
+            default:  
                 break;
         }
     }
