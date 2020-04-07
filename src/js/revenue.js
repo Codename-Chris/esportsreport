@@ -1,143 +1,140 @@
 // import * from 'd3';
 
-// loads data from the csv file and addes axes to SVG
-// d3.csv("././data1.csv", function (error, data) {
-//     if (error) {
-//         throw error;
-//     }
+// loads data / add axes
+d3.csv("/data/data1.csv").then(function(data) {
+    console.log(data[0]);
+});
 
-//     xScale.domain(data.map(function (d) { return d.year }))
-//     yScale.domain([0, d3.max(data, function (d) { return d.revenue })])
 
-//     g.append('g')
-//         .attr("transform", "translate(0," + height + ")")
-//         .call(d3.axisBottom(xScale))
 
-//     g.append('g')
-//         .call(d3.axisLeft(yScale).tickFormat(function (d) {
-//             return "$" + d;
-//         }).ticks(10))
-//             .append('text')
-//             .attr('y', 6)
-//             .attr('dy', '0.71em')
-//             .attr("text-anchor", "end")
-//             .text("Revenue in Millions U.S. Dollars");
-//     });
-
-document.addEventListener("DOMContentLoaded", () => {
-    const dataset = [
-        { year: "2012", revenue: 130},
-        { year: "2014", revenue: 194},
-        { year: "2015", revenue: 325},
-        { year: "2016", revenue: 493},
-        { year: "2017", revenue: 655},
-        { year: "2018", revenue: 865},
-        { year: "2019", revenue: 1096}
-    ]
-
-    const data = dataset.sort (function(a, b) {
-        return d3.ascending(a.revenue,b.revenue)
-    })
+// below code renders bar graph properly without loading data from csv
+// document.addEventListener("DOMContentLoaded", () => {
+//     const dataset = [
+//         { year: "2012", revenue: 130},
+//         { year: "2014", revenue: 194},
+//         { year: "2015", revenue: 325},
+//         { year: "2016", revenue: 493},
+//         { year: "2017", revenue: 655},
+//         { year: "2018", revenue: 865},
+//         { year: "2019", revenue: 1096}
+//     ]
+//     // sorts data in ascending order
+//     const data = dataset.sort (function(a, b) {
+//         return d3.ascending(a.revenue,b.revenue)
+//     })
     
-    const margin = 50
-    const width = window.innerWidth - margin * 6.7;
-    const height = window.innerHeight - margin * 3;
+//     //set params m/h/w
+//     const margin = 50
+//     const height = window.innerHeight - margin * 3;
+//     const width = window.innerWidth - margin * 6.8;
 
-    const svg = d3.select("#yearGraph");
-    // const svgContainer = d3.select("#container");
+//     // y axis elements
+//     const yAxis = d3.scaleLinear().range([height, 0]).domain([0, 1200]);
 
-    const chart = svg.append('g')
-        .attr('transform', `translate(${margin}, ${margin})`)
+//     // x axis elements
+//     const xAxis = d3.scaleBand()
+//         .range([0, width])
+//         .domain(data.map((d) => d.year))
+//         .padding(0.3);
 
-    const yScale = d3.scaleLinear()
-        .range([height, 0])
-        .domain([0, 1200]);
+//     // draws tick lines throughout graph from y axis 
+//     const yLines = () => d3.axisLeft().scale(yAxis)
 
+//     //select svg by classname
+//     const myBar = d3.select("#yearGraph")
+//         .append('g')
+//         .attr('transform', `translate(${margin}, ${margin})`)
 
-    const xScale = d3.scaleBand()
-        .range([0, width])
-        .domain(data.map((d) => d.year))
-        .padding(0.4);
+//     // draws y axis elements
+//     myBar.append('g')
+//         .call(d3.axisLeft(yAxis));
 
-    const makeYLines = () => d3.axisLeft()
-        .scale(yScale)
+//     //draws x axis elements
+//     myBar.append('g')
+//         .attr("transform", `translate(0, ${height})`)
+//         .call(d3.axisBottom(xAxis));
 
-    chart.append('g')
-        .call(d3.axisLeft(yScale));
-
-    chart.append('g')
-        .attr("transform", `translate(0, ${height})`)
-        .call(d3.axisBottom(xScale));
-
-    chart.append('g')
-        .attr('class', 'grid')
-        .call(makeYLines()
-            .tickSize(-width, 1, 0)
-            .tickFormat('')
-        )
-
-    const barGroups = chart.selectAll()
-        .data(data)
-        .enter()
-        .append('g')
-
-    chart.selectAll()
-        .data(data)
-        .enter()
-        .append('g')
-        .append("rect")
-        .attr("class", "bar")
-        .attr("x", g => xScale(g.year))
-        .attr("y", g => yScale(g.revenue))
-        .attr("height", g => height - yScale(g.revenue))
-        .attr("width", xScale.bandwidth())
+//     //draws m on axis
+//     myBar.append('g')
+//         .attr('class', 'myBar-lines')
+//         .call(yLines()
+//             .tickSize(-width)
+//             .tickFormat('')
+//         )
+//     //draws bars
+//     myBar.selectAll()
+//         .data(data)
+//         .enter()
+//         .append('g')
+//         .append("rect")
+//         .attr("class", "bar")
+//         .attr("x", g => xAxis(g.year))
+//         .attr("y", g => yAxis(g.revenue))
+//         .attr("height", g => height - yAxis(g.revenue))
+//         .attr("width", xAxis.bandwidth())
        
-    barGroups.append("text")
-        .attr("class", "value")
-        .attr("x", g => xScale(g.year) + xScale.bandwidth() / 2)
-        .attr("y", g => yScale(g.revenue) - 3 )
-        .attr("text-anchor", "middle")
-        .text(g => `${g.revenue}`);
+//     // draws number of each graph above bar
+//     myBar.selectAll()
+//         .data(data)
+//         .enter()
+//         .append('g')
+//         .append("text")
+//         .attr("class", "myBar-val")
+//         .attr("x", g => xAxis(g.year) + xAxis.bandwidth() / 2)
+//         .attr("y", g => yAxis(g.revenue) - 5 )
+//         .attr("text-anchor", "middle")
+//         .style("font-weight","bold")
+//         .style("fill", "darkblue")
+//         .text(g => `${g.revenue}`);
 
-    svg.append("text")
-        .attr("class", "title")
-        .attr("x", width / 2 + margin)
-        .attr("y", 25)
-        .attr("text-anchor", "middle")
-        .attr("stroke", "grey")
-        .attr("font-size", "12px")
-        .text("Esports Market Revenue");
+//     // draws titles and lables for axes and graph
+//     d3.select("#yearGraph")
+//         .append("text")
+//         .attr("class", "year-title")
+//         .attr("x", width / 2 + margin)
+//         .attr("y", 25)
+//         .attr("text-anchor", "middle")
+//         .attr("stroke", "darkblue")
+//         .style("fill", "darkblue")
+//         .style("font-size", "20px")
+//         .text("Esports Market Revenue");
 
-    svg.append("text")
-        .attr("class", "source")
-        .attr("x", width / 2 + margin)
-        .attr("y", 40)
-        .attr("text-anchor", "middle")
-        .text("Source: https://www.statista.com/");
+//     d3.select("#yearGraph")
+//         .append("text")
+//         .attr("class", "year-source")
+//         .attr("x", width / 2 + margin)
+//         .attr("y", 40)
+//         .attr("text-anchor", "middle")
+//         .style("fill", "darkblue")
+//         .text("Source: https://www.statista.com/");
+        
+//     d3.select("#yearGraph")
+//         .append("text")
+//         .attr("class", "year-label")
+//         .attr("x", width / 2 + margin)
+//         .attr("y", height + margin * 1.7)
+//         .attr("text-anchor", "middle")
+//         .attr("stroke", "darkblue")
+//         .style("font-size", "12px")
+//         .style("fill","darkblue")
+//         .text("Year");
 
-    d3.select("#yearGraph")
-        .append("text")
-        .attr("class", "label")
-        .attr("x", -(height / 2))
-        .attr("y", margin / 4.5)
-        .attr("transform", "rotate(-90)")
-        .attr("text-anchor", "middle")
-        .attr("stroke", "black")
-        .attr("font-size", "12px")
-        .text("Revenue in Millions U.S. Dollars");
-
-    svg.append("text")
-        .attr("class", "label")
-        .attr("x", width / 2 + margin)
-        .attr("y", height + margin * 1.7)
-        .attr("text-anchor", "middle")
-        .attr("stroke", "grey")
-        .attr("font-size", "12px")
-        .attr("font-family", "op")
-        .text("Year");
+//     d3.select("#yearGraph")
+//         .append("text")
+//         .attr("class", "year-label")
+//         .attr("x", -(height / 2))
+//         .attr("y", margin / 4.5)
+//         .attr("transform", "rotate(-90)")
+//         .attr("text-anchor", "middle")
+//         .attr("stroke", "darkblue")
+//         .style("font-size", "12px")
+//         .style("fill", "yellow")
+//         .text("Revenue in Millions U.S. Dollars");
 
 
-// drawing a line and making axes
+
+// below code does not work*
+// drawing a line and making axes ()
     // svg.append("path")
     //     .data([data])
     //     .attr('class','line')
@@ -145,10 +142,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // svg.append("g")
     //     .attr("transform", "translate(0," + height + ")")
-    //     .call(d3.axisBottom(xScale))
+    //     .call(d3.axisBottom(xAxis))
 
     // svg.append("g")
     //     .data([data])
-});
+// });
 
 
