@@ -2,63 +2,34 @@
 <html lang="en">
 
 <head>
-  <title>Simon Says</title>
+  <title>Covid-19</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="./dist/main.css" />
+  <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 
-  <!-- audio files -->
-  <audio id="color-sound" src="./dist/sounds/colorSound.mp3"></audio>
-  <audio id="start-sound" src="./dist/sounds/start.mp3"></audio>
-  <audio id="game-over-sound" src="./dist/sounds/gameOver.mp3"></audio>
-  <audio id="win-sound" src="./dist/sounds/youWin.mp3"></audio>
+  <!-- d3 -->
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <!-- Data -->
 
-  <!-- trying to get rid of 404 favicon not found in chrome console -->
-  <!-- <link rel="icon" href="data:;base64,iVBORw0KGgo="> -->
 </head>
 
-<body>
+<body class="all">
   <script src="./dist/main.js"></script>
-  <div class="whole-page">
-    <div class="comment-container">
-      <h1 id="comments" class="title">Simon Says</h1>
-    </div>
-    <p class="instructions">Instructions: Repeat the same color pattern. There are 10 levels to beat!</p>
-    <div class="container">
-      <div class="inner-circle">
-        <button id="start" class="start-button">START</button>
-        <label id="level-counter" class="level-counter"></label>
-      </div>
-
-      <div class="board-container">
-        <div class="top-colors">
-          <div id="green" class="green color"></div>
-          <div id="red" class="red color"></div>
-        </div>
-
-        <div class="bottom-colors">
-          <div id="yellow" class="yellow color"></div>
-          <div id="blue" class="blue color"></div>
-        </div>
-      </div>
-    </div>
-    
-    <div class="personal-links">
-      <div>
-        <a class="link" href="https://www.linkedin.com/in/christopher-garthright/">
-          <img class="linkedin-link" src="https://image.flaticon.com/icons/svg/1384/1384088.svg" width="40px" />
-        </a>
-      </div>
-      
-      <div>
-        <a class="link" href="https://github.com/Codename-Chris">
-          <img class="git-link" src="https://image.flaticon.com/icons/svg/1051/1051377.svg" width="40px" />
-        </a>
-      </div>
-    </div>
-    <small class="footer">Made By: Christopher Garthright</small> 
+ 
+  <div class="barGraph" id="container">
+    <svg id="yearGraph"></svg>
+    <svg id="leastCountries"></svg>
   </div>
+
+
+  
+
+ 
+
+  <script src="./src/js/revenue.js" ></script>
+  <script src="./src/js/prizes.js" charset="utf-8"></script>
 </body>
-<script src="./js/game.js"></script>  
-</html>       
+
+</html>

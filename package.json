@@ -16,7 +16,9 @@
   },
   "author": "mrcjbradley",
   "license": "ISC",
-  "dependencies": {},
+  "dependencies": {
+    "d3": "^5.15.1"
+  },
   "devDependencies": {
     "@babel/core": "^7.8.6",
     "@babel/plugin-proposal-optional-chaining": "^7.7.5",
