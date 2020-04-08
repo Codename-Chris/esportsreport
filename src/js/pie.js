@@ -1,3 +1,5 @@
+// working thru tutorial for a pie chart
+
 document.addEventListener("DOMContentLoaded", () => {
     const dataset = [
         { a: 9, b: 20, c: 30, d: 8, e: 12 }

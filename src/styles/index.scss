@@ -1,23 +1,56 @@
+#whole-body {
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+
+#aside-logo {
+	padding: 60px 30px;
+	width: 23%;
+	position: fixed;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	overflow-y: hidden;
+	z-index: 1001;
+	background-color: #282727;
+	font-style: italic;
+	font-family: oswald,sans-serif;
+}
+
+.aside-h1 {
+	text-align: center;
+	color: whitesmoke;
+	letter-spacing: 3px;
+	font-size: 40px;
+}
+
+.aside-span {
+	display: block;
+	color: whitesmoke;
+	letter-spacing: 3px;
+	font-size: 14px;
+}
+
 svg {
 	height: 100%;;
 	width: 100%;
 }
 
-#whole-body {
-	height: 100%;
-	width: 100%;
-}
 
 div#layout {
   text-align: center;
 }
 
 div#container {
-  width: 90%;
+  width: 72%;
   height: 600px;
   margin: auto;
   text-align: center;
+  float: right;
 }
+
 .bar {
   fill: #1e78cb;
 }
@@ -25,7 +58,7 @@ div#container {
 text {
   font-size: 12px;
   fill: black;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: oswald, sans-serif;
 }
 
 

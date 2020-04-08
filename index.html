@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="./dist/main.css" />
+  <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
   <script src="https://d3js.org/d3.v5.min.js"></script>
   <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
 
@@ -17,15 +18,17 @@
   <script src="./src/js/pie.js"></script> 
   <script src="./src/js/revenue.js" ></script>
   <script src="./src/js/prizes.js"></script>
+  
  
   <aside id="aside-logo">
-   <h1>Esports 
-     <span>Report</span>
+   <h1 class="aside-h1">ESPORTS
+     <span class="aside-span">Report</span>
    </h1>
  </aside>
 
   <div class="barGraph" id="container">
     <svg id="yearGraph"></svg>
+    <svg id="salesGraph"></svg>
     <svg id="pieChart"></svg>
     <svg id="prizesGraph"></svg>
   </div>
