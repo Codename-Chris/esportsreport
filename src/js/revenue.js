@@ -32,20 +32,20 @@ document.addEventListener("DOMContentLoaded", () => {
     // const data = dataset.sort (function(a, b) {
     //     return d3.ascending(a.revenue,b.revenue)
     // })
-    
+
     //set params m/h/w
     const margin = 50
     const height = window.innerHeight - margin * 3;
     const width = window.innerWidth - margin * 9;
-    
-    
-   d3.csv("https://raw.githubusercontent.com/Codename-Chris/esportsreport/master/src/data/data1.csv", function (d) {
+
+
+    d3.csv("https://raw.githubusercontent.com/Codename-Chris/esportsreport/master/src/data/data1.csv", function (d) {
         return {
             year: d.year,
             revenue: d.revenue,
         };
     }).then(function (data) {
-        console.log(data[0]); //
+        // console.log(data[0]); //
 
         const yAxis = d3.scaleLinear().range([height, 0]).domain([0, 1200]);
 
@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // .attr("stroke", "darkblue")
             .style("font-size", "12px")
             .style("fill", "black")
-            .style("text-decoration","underline")
+            .style("text-decoration", "underline")
             .text("Year");
 
         d3.select("#yearGraph")
@@ -153,9 +153,9 @@ document.addEventListener("DOMContentLoaded", () => {
             .style("text-decoration", "underline")
             .text("Revenue in Millions U.S. Dollars");
     });
-   
-// below code does not work*
-// drawing a line and making axes ()
+
+    // below code does not work*
+    // drawing a line and making axes ()
     // svg.append("path")
     //     .data([data])
     //     .attr('class','line')
@@ -168,5 +168,3 @@ document.addEventListener("DOMContentLoaded", () => {
     // svg.append("g")
     //     .data([data])
 });
-
-

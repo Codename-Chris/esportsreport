@@ -10,11 +10,11 @@
 	width: 23%;
 	position: fixed;
 	bottom: 0;
-	top: 0;
+	top: -30px;
 	left: 0;
 	overflow-y: hidden;
 	z-index: 1001;
-	background-color: #282727;
+	background-color: rgb(0, 0, 0);
 	font-style: italic;
 	font-family: oswald,sans-serif;
 }
@@ -24,18 +24,77 @@
 	color: white;
 	letter-spacing: 3px;
 	font-size: 40px;
+	border-top: 1px solid grey;
+	border-bottom: 1px solid grey;
 }
 
 .aside-span {
 	display: block;
-	color: rgb(213, 213, 213);
+	color: white;
 	letter-spacing: 3px;
+	font-size: 24px;
+	padding-bottom: 10px;
+}
+
+.aside-h3 > .aside-img {
+	background: transparent;
+	height: 200px;
+	padding-left: 38%;
+	margin-top: -20px;
+}
+
+.aside-h3 {
+	color: white;
+	font-size: 16px;
+	text-align: left;
+	border-bottom: 1px solid grey;
+	margin-bottom: 3px;
+}
+
+.aside-text {
+	color: white;
+	text-align: left;
 	font-size: 14px;
+	margin-top: 40px;
+	padding-left: 2px;
+	padding-right: 2px;
+	border-bottom: 1px solid grey;
+}
+
+.aside-small {
+	color: rgb(230, 230, 230);
+	font-size: 10px;
+	text-align: center;
+}
+
+.aside-links {
+	text-align: center;
+	margin-top: 20%;
+	margin-left: -13%;
+}
+
+.aside-links-al {
+	height: 16px;
+	text-decoration: none;
+}
+.aside-links-ul {
+	letter-spacing: 20px
+}
+.aside-links-ul > li {
+  display: inline;
+}
+
+.aside-small {
+	margin-left: 15%;
 }
 
 svg {
-	height: 100%;;
+	height: 100%;
 	width: 100%;
+}
+
+body {
+	font-family: oswald, sans-serif;
 }
 
 
@@ -44,7 +103,7 @@ div#layout {
 }
 
 div#container {
-  width: 72%;
+  width: 71%;
   height: 600px;
   margin: auto;
   text-align: center;

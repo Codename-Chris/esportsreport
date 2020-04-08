@@ -6,15 +6,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const width = window.innerWidth - margin * 9;
 
 
-    d3.csv("https://raw.githubusercontent.com/Codename-Chris/esportsreport/master/src/data/data2.csv", function (d) {
+    d3.csv("/src/data/data2.csv", function (d) {
         return {
             game: d.game,
             prize: d.prize
         };
     }).then(function (data) {
-        console.log(data[0]); //
+        // console.log(data[0]); 
 
-        const yAxis = d3.scaleLinear().range([height, 0]).domain([0, 1200]);
+        // y axis elements
+        const yAxis = d3.scaleLinear().range([height, 0]).domain([0, 70]);
 
         // x axis elements
         const xAxis = d3.scaleBand()
@@ -35,9 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
             .call(d3.axisLeft(yAxis));
 
         //draws x axis elements
-        myBar.append('g')
-            .attr("transform", `translate(0, ${height})`)
-            .call(d3.axisBottom(xAxis));
+            myBar.append('g')
+                .attr("transform", `translate(0, ${height})`)
+                .call(d3.axisBottom(xAxis));
 
         //draws m on axis
         myBar.append('g')
@@ -84,7 +85,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .style("fill", "black")
             .style("font-size", "25px")
             // .style("text-decoration", "underline")
-            .text("Esports Market prize");
+            .text("Prizepool By Game In 2019");
 
         d3.select("#prizesGraph")
             .append("text")
@@ -105,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .style("font-size", "12px")
             .style("fill", "black")
             .style("text-decoration", "underline")
-            .text("game");
+            .text("Games");
 
         d3.select("#prizesGraph")
             .append("text")
@@ -118,6 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
             .style("font-size", "14px")
             .style("fill", "black")
             .style("text-decoration", "underline")
-            .text("prize in Millions U.S. Dollars");
+            .text("Prizepools in Millions U.S. Dollars");
     });
 });
