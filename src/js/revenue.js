@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // .attr("stroke", "darkblue")
             .style("fill", "black")
             .style("font-size", "25px")
-            .style("text-decoration", "underline")
+            // .style("text-decoration", "underline")
             .text("Esports Market Revenue");
 
         d3.select("#yearGraph")
