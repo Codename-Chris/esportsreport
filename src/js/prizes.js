@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const width = window.innerWidth - margin * 9;
 
 
-    d3.csv("/src/data/data2.csv", function (d) {
+    d3.csv("https://raw.githubusercontent.com/Codename-Chris/esportsreport/master/src/data/data2.csv", function (d) {
         return {
             game: d.game,
             prize: d.prize
