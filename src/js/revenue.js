@@ -34,9 +34,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // })
 
     //set params m/h/w
-    const margin = 50
-    const height = window.innerHeight - margin * 3;
-    const width = window.innerWidth - margin * 9;
+    // const margin = 50
+    // const height = window.innerHeight - margin * 3;
+    // const width = window.innerWidth - margin * 9;
+    const margin = 80
+    const height = 600 - 2 * margin;
+    const width = 1000 - 3 * margin;
 
 
     d3.csv("https://raw.githubusercontent.com/Codename-Chris/esportsreport/master/src/data/data1.csv", function (d) {
@@ -111,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .append("text")
             .attr("class", "year-title")
             .attr("x", width / 2 + margin)
-            .attr("y", 22)
+            .attr("y", 50)
             .attr("text-anchor", "middle")
             // .attr("stroke", "darkblue")
             .style("fill", "black")
@@ -123,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .append("text")
             .attr("class", "year-source")
             .attr("x", width / 2 + margin)
-            .attr("y", 40)
+            .attr("y", 70)
             .attr("text-anchor", "middle")
             .style("fill", "black")
             .text("Source: https://www.statista.com/");
@@ -132,7 +135,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .append("text")
             .attr("class", "year-label")
             .attr("x", width / 2 + margin)
-            .attr("y", height + margin * 1.7)
+            .attr("y", height + margin * 1.5)
             .attr("text-anchor", "middle")
             // .attr("stroke", "darkblue")
             .style("font-size", "12px")
@@ -143,8 +146,8 @@ document.addEventListener("DOMContentLoaded", () => {
         d3.select("#yearGraph")
             .append("text")
             .attr("class", "year-label")
-            .attr("x", -(height / 2))
-            .attr("y", margin / 4.5)
+            .attr("x", -(height / 1.7))
+            .attr("y", margin / 2.5)
             .attr("transform", "rotate(-90)")
             .attr("text-anchor", "middle")
             // .attr("stroke", "darkblue")

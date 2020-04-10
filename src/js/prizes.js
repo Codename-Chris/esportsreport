@@ -1,9 +1,12 @@
 // below code renders bar graph properly without loading data from csv
 document.addEventListener("DOMContentLoaded", () => {
     //set params m/h/w
-    const margin = 50
-    const height = window.innerHeight - margin * 3;
-    const width = window.innerWidth - margin * 9;
+    // const margin = 50
+    // const height = window.innerHeight - margin * 3;
+    // const width = window.innerWidth - margin * 9;
+    const margin = 80
+    const height = 600 - 2 * margin;
+    const width = 1000 - 3 * margin;
 
 
     d3.csv("https://raw.githubusercontent.com/Codename-Chris/esportsreport/master/src/data/data2.csv", function (d) {
@@ -12,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
             prize: d.prize
         };
     }).then(function (data) {
-        // console.log(data[0]); 
+        console.log(data[0]); //
 
         // y axis elements
         const yAxis = d3.scaleLinear().range([height, 0]).domain([0, 70]);
@@ -36,9 +39,9 @@ document.addEventListener("DOMContentLoaded", () => {
             .call(d3.axisLeft(yAxis));
 
         //draws x axis elements
-            myBar.append('g')
-                .attr("transform", `translate(0, ${height})`)
-                .call(d3.axisBottom(xAxis));
+        myBar.append('g')
+            .attr("transform", `translate(0, ${height})`)
+            .call(d3.axisBottom(xAxis));
 
         //draws m on axis
         myBar.append('g')
@@ -85,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .style("fill", "black")
             .style("font-size", "25px")
             // .style("text-decoration", "underline")
-            .text("Prizepool By Game In 2019");
+            .text("Pizepool By Game");
 
         d3.select("#prizesGraph")
             .append("text")
