@@ -17,6 +17,7 @@
 	background-color: rgb(0, 0, 0);
 	font-style: italic;
 	font-family: oswald,sans-serif;
+	text-align: center;
 }
 
 .aside-h1 {
@@ -32,16 +33,14 @@
 	display: block;
 	color: white;
 	letter-spacing: 3px;
-	font-size: 24px;
+	font-size: 40px;
 	padding-bottom: 10px;
+	width: 51%;
+	text-align: center;
+	margin-left: 23%;
 }
 
-.aside-h3 > .aside-img {
-	background: transparent;
-	height: 200px;
-	padding-left: 38%;
-	margin-top: -20px;
-}
+
 
 .aside-h3 {
 	color: white;
@@ -52,19 +51,25 @@
 	margin-top: 3px;
 }
 
+.aside-img {
+	display: block;
+	padding-left: 26%;
+	position: static;
+}
+
 .aside-text {
 	color: white;
     text-align: center;
     font-size: 16px;
-    margin-top: 40px;
+    
     padding-left: 2px;
     padding-right: 2px;
-    border-bottom: 1px solid gray;
-    border-top: 1px solid gray;
+  
+    
     letter-spacing: 0.5px;
     color: white;
     background-color: black;
-    border-radius: 35px;
+	display: inline-block;
 }  
 
 .aside-small {
@@ -84,7 +89,7 @@
 	text-decoration: none;
 }
 .aside-links-ul {
-	letter-spacing: 30px;
+	letter-spacing: 21px;
 }
 .aside-links-ul > li {
   display: inline;
@@ -95,18 +100,17 @@
 	margin-left: 15%;
 }
 
-@media only screen and (max-width: 1200px) {
-	.aside-links .aside-logo {
-		width: 50%;
-	}
-}
+
 svg {
 	height: 100%;
 	width: 100%;
+	padding-left: 10%;
+	
 }
 
 body {
 	font-family: oswald, sans-serif;
+	overflow-x: hidden;
 }
 
 
@@ -132,6 +136,21 @@ text {
   font-family: oswald, sans-serif;
 }
 
+.photo1 {
+	margin-top: -10px;
+	width: 125%;
+}
+
+.photo2 {
+	height: 100%;
+}
+
+.photo3 {
+	    width: 100%;
+    height: 100%;
+    margin: auto;
+    margin-left: 10%;
+}
 
 
 
