@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
         d3.select("#yearGraph")
             .append("text")
             .attr("class", "year-label")
-            .attr("x", -(height / 1.7))
+            .attr("x", -(height / 2))
             .attr("y", margin / 2.5)
             .attr("transform", "rotate(-90)")
             .attr("text-anchor", "middle")
