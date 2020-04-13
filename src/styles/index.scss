@@ -46,10 +46,10 @@
 	color: white;
 	font-size: 24px;
 	text-align: center;
-	border-bottom: 1px solid grey;
+	text-decoration: underline white;
 	margin-bottom: 3px;
 	margin-top: 3px;
-	text-shadow: 1px 1px gray;
+	text-shadow: 1px 1px gray	;
 }
 
 .aside-img {
@@ -65,19 +65,19 @@
     
     padding-left: 2px;
     padding-right: 2px;
-	width: 200px;
+	
     
     letter-spacing: 0.5px;
     color: white;
     background-color: black;
 	display: flex;
 	flex-direction: column;
-	margin-left: 45px;
+	
 	
 }  
 
 .aside-small {
-	color: rgb(230, 230, 230);
+	color: rgb(191, 191, 191);
 	font-size: 10px;
 	text-align: center;
 }
@@ -116,6 +116,7 @@
 svg {
 	height: 100%;
 	width: 100%;
+	margin-left: 1%;
 		
 }
 
