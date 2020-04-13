@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
             marketshare: d.marketshare
         };
     }).then(function (data) {
-        console.log(data[0]); 
+        // console.log(data[0]); 
 
         // y axis elements
         const yAxis = d3.scaleLinear().range([height, 0]).domain([0, 100]);

@@ -70,7 +70,9 @@
     letter-spacing: 0.5px;
     color: white;
     background-color: black;
-	display: inline-block;
+	display: flex;
+	flex-direction: column;
+	margin-left: 20px;
 	
 }  
 
