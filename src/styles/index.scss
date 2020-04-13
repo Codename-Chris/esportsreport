@@ -27,7 +27,7 @@
 	border-top: 1px solid grey;
 	border-bottom: 1px solid grey;
 	text-shadow:  2px 2px gray;
-	border-radius: 20%;
+	border-radius: 20% !important ;
 }
 
 .aside-span {
@@ -105,9 +105,7 @@
 
 svg {
 	height: 100%;
-	width: 100%;
-	
-		
+	width: 100%;	
 }
 
 body {

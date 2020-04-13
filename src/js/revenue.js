@@ -1,6 +1,6 @@
 // import * from 'd3';
 
-// loads data / add axes
+// loads data 
 // d3.csv("https://raw.githubusercontent.com/Codename-Chris/esportsreport/master/src/data/data1.csv")
 //     .then(function(data) {
 //         console.log(data[0]);
