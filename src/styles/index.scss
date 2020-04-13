@@ -105,6 +105,8 @@
 svg {
 	height: 100%;
 	width: 100%;	
+	padding-left: 100px;
+	padding-right: 100px;
 }
 
 body {
@@ -115,17 +117,8 @@ body {
 	height: 100%;
 }
 
-.barGraph {
-	display: table-cell;
-	vertical-align: middle;
-	text-align: center;
-}
-
-
-
-
 div#bar-id {
-  width: 71%;
+  width: 1000px;
   height: 600px;
   margin: auto;
   text-align: center;
