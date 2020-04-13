@@ -80,6 +80,7 @@
 	color: rgb(191, 191, 191);
 	font-size: 10px;
 	text-align: center;
+	margin-left: 9%;
 }
 
 .aside-links {
@@ -101,22 +102,15 @@
   display: inline;
 }
 
-.aside-small {
-	text-align: center;
-	margin-left: 15%;
-}
-
 .aside-a {
 	text-decoration: underline;
 	color: rgb(216, 215, 215);
 }
 
-
-
 svg {
 	height: 100%;
 	width: 100%;
-	margin-left: 5%;
+	
 		
 }
 
@@ -160,7 +154,8 @@ text {
 	margin-right: auto;
 	display: block;
 	margin-left: -5%;
-	height: 125%;
+	height: 120%;
+	width: 105%;
 }
 
 .photo2 {
@@ -168,6 +163,7 @@ text {
 	margin-right: auto;
 	display: block;
 	height: 100%;
+	width: 105%;
 	margin-left: -5%;
 }
 
